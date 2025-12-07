@@ -1,0 +1,202 @@
+:root {
+  --colour-absent: rgb(120, 124, 126);
+  --colour-present: rgb(201, 180, 88);
+  --colour-correct: rgb(106, 170, 100);
+  --colour-border-empty: rgb(211, 214, 218);
+  --colour-border-filled: rgb(135, 138, 140);
+}
+
+a {
+  all: unset;
+}
+
+.guesses {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+  height: 360px;
+}
+
+.guess {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.guess span {
+  width: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+span.filled {
+  color: black;
+  border: 2px solid var(--colour-border-filled);
+}
+
+span.empty {
+  color: black !important;
+  border: 2px solid var(--colour-border-empty) !important;
+}
+
+span.present {
+  color: white !important;
+  background: var(--colour-present) !important;
+}
+
+span.correct {
+  color: white !important;
+  background: var(--colour-correct) !important;
+}
+
+span.absent {
+  color: white !important;
+  background: var(--colour-absent) !important;
+}
+
+div.overlay {
+  position: relative;
+}
+
+div.overlay span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.buttons {
+  margin-top: .5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem;
+}
+
+div.buttons a {
+  width: 100%;
+  padding: .25rem .5rem;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: 250ms transform;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+div.buttons a:hover {
+  transform: translateY(-3px);
+}
+
+div.buttons a * {
+  margin: auto 0;
+  vertical-align: middle;
+}
+
+a.back {
+  background: #faa6a4;
+  color: white;
+}
+
+a.join {
+  background: #9251ca;
+  color: white;
+}
+
+ul.puzzles {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+ul.puzzles li {
+  border: 2px solid var(--colour-border-empty);
+  border-radius: 4px;
+  text-align: center;
+}
+
+ul.puzzles li.completed {
+  background: var(--colour-correct);
+  color: white;
+}
+
+ul.puzzles a:active {
+  color: black;
+}
+
+ul.puzzles a {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: .5rem 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+ul.puzzles h3 {
+  margin-top: 0;
+}
+
+nav {
+  border-bottom: 1px solid var(--colour-border-empty);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0 auto;
+  width: max-content;
+  font-size: 2rem;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.keyboard div {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin: 0 auto;
+}
+
+.keyboard span {
+  background: var(--colour-border-empty);
+  width: 30px;
+  height: 58px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  text-transform: capitalize;
+  vertical-align: middle;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.keyboard span.wide {
+  width: calc(1.5 * 30px);
+  font-size: 1rem;
+}
