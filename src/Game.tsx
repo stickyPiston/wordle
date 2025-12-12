@@ -24,7 +24,7 @@ const useGameStore = create(
             localStorage.setItem("puzzles", JSON.stringify(saved));
         }
 
-        if (guesses.find(guess => guess.guess === currentGuess)) {
+        if (currentGuess.length !== currentWord.length && guesses.find(guess => guess.guess === currentGuess)) {
             setTimeout(() => set(() => ({ shake: false })), 500);
             return { shake: true };
         }
