@@ -249,7 +249,7 @@ export default function Game() {
                         <FontAwesomeIcon icon={faArrowLeft} />
                         <span>Terug</span>
                     </Link>
-                    <Link to="/" className="join">
+                    <Link to="https://forms.gle/ssnm77UJuaDckRKU9" className="join">
                         <span>Kom bij de Trotcie</span>
                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     </Link>
