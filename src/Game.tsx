@@ -24,7 +24,7 @@ const useGameStore = create(
             localStorage.setItem("puzzles", JSON.stringify(saved));
         }
 
-        if (guesses.find(guess => guess.guess === currentGuess)) {
+        if (currentGuess.length !== currentWord.length || guesses.find(guess => guess.guess === currentGuess)) {
             setTimeout(() => set(() => ({ shake: false })), 500);
             return { shake: true };
         }
@@ -249,7 +249,7 @@ export default function Game() {
                         <FontAwesomeIcon icon={faArrowLeft} />
                         <span>Terug</span>
                     </Link>
-                    <Link to="/" className="join">
+                    <Link to="https://forms.gle/ssnm77UJuaDckRKU9" className="join">
                         <span>Kom bij de Trotcie</span>
                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     </Link>
