@@ -5,6 +5,7 @@ import './index.css'
 import Home from "./Home";
 import Game from "./Game";
 
+// Hello world
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter basename="/wordle">
